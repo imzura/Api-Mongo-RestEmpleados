@@ -25,7 +25,7 @@ export async function putVehicle(req, res) {
     try {
         // Encontrar y actualizar el objeto en Mongo
         await Vehicle.findOneAndUpdate({ plate: plate }, { color: color, model: model });
-        res.status(204).json('Vehicle updated successfully');
+        res.json('Vehicle updated successfully');
     } catch (error) {
         res.status(500).json('Error');
     }
